@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="referrer" content="no-referrer">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta name="theme-color" content="#e5edf3" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#18232e" media="(prefers-color-scheme:dark)">
+<link rel="icon" href="./logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="./entry.css">
+<title>随星录 · StellaChat</title>
+<script type="module" src="./entry.js"></script>
+</head><body>
+<main>
+  <header><span class="brand" aria-hidden="true"></span><div><h1>随星录</h1><p lang="en">StellaChat</p></div></header>
+  <section aria-labelledby="endpoint-heading">
+    <h2 id="endpoint-heading">聊天入口</h2>
+    <div id="destination" hidden>
+      <p id="source"></p><bdi id="address"></bdi>
+      <a id="enter" class="primary" rel="noreferrer">进入聊天 <span aria-hidden="true">→</span></a>
+      <div class="actions"><button type="button" id="change">更换地址</button><button type="button" id="forget" hidden>忘记此设备地址</button></div>
+    </div>
+    <form id="editor" novalidate>
+      <p id="setup-status" role="status">正在读取站点地址…</p>
+      <label for="endpoint">HTTPS 后端地址</label>
+      <input id="endpoint" type="url" dir="ltr" inputmode="url" placeholder="https://chat.example.com" autocomplete="off" autocapitalize="none" spellcheck="false" required aria-describedby="hint">
+      <p id="hint">请填写你信任的聊天服务器首页。访问口令在该服务器输入。</p>
+      <label class="remember"><input id="remember" type="checkbox" checked> 在此设备记住地址</label>
+      <p id="error" role="alert" hidden></p>
+      <button type="submit" class="primary">前往聊天服务器 <span aria-hidden="true">→</span></button>
+      <button type="button" class="cancel" id="cancel" hidden>取消</button>
+    </form>
+    <noscript>请启用 JavaScript 以配置服务器地址。</noscript>
+  </section>
+</main>
+</body></html>
